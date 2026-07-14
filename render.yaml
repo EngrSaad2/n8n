@@ -2,15 +2,13 @@ services:
   - type: web
     name: n8n
     runtime: image
+
     image:
-      url: docker.io/n8nio/n8n:latest
+      url: docker.io/n8nio/n8n:1.111.0
 
     plan: free
 
     envVars:
-      - key: N8N_HOST
-        value: n8n.onrender.com
-
       - key: N8N_PROTOCOL
         value: https
 
@@ -25,3 +23,9 @@ services:
 
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
+
+      - key: DB_TYPE
+        value: sqlite
+
+      - key: DB_SQLITE_DATABASE
+        value: /tmp/database.sqlite
