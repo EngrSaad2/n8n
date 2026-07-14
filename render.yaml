@@ -25,8 +25,3 @@ services:
 
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
-
-    disk:
-      name: n8n-data
-      mountPath: /home/node/.n8n
-      sizeGB: 1
